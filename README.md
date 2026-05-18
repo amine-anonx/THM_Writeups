@@ -26,7 +26,7 @@ Do not use these techniques on systems you do not own or have permission to test
 
 ## 👤 Author
 
-- GitHub: [Anonx](https://github.com/amine-anonx)
+- TryHackMe: [Anonx](https://tryhackme.com/p/GM.AnonX)
 - Focus: Cybersecurity | Ethical Hacking | CTF Challenges
 
 ---
