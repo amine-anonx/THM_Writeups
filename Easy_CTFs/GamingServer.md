@@ -1,4 +1,4 @@
-# GamingServer — TryHackMe
+# GamingServer [THM]
 
 ## Objective
 
@@ -9,7 +9,7 @@ The objective of this room was to gain access to the target machine and retrieve
 
 ---
 
-## 🔍 Enumeration
+## Enumeration
 
 ### Tools Used
 - `nmap`
@@ -146,7 +146,7 @@ After gaining access, I navigated the system and successfully retrieved the firs
 
 ---
 
-## 🔼 Privilege Escalation
+## Privilege Escalation
 
 After performing internal enumeration, I discovered an interesting privilege-related finding:
 
@@ -215,7 +215,7 @@ This ultimately led to retrieving:
 
 ---
 
-## ✅ Conclusion
+## Conclusion
 
 This room demonstrated the importance of proper web enumeration and secure file exposure practices.
 
