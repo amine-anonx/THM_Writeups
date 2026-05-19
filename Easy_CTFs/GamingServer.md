@@ -1,6 +1,6 @@
-# 🕹️ GamingServer — TryHackMe
+# GamingServer — TryHackMe
 
-## 🎯 Objective
+## Objective
 
 The objective of this room was to gain access to the target machine and retrieve both flags:
 
@@ -28,7 +28,7 @@ I started with an Nmap scan to identify exposed services running on the target m
 
 **Nmap Scan Result:**
 
-![Nmap_scan](https://imgur.com/zw9uxpn)
+![Nmap_scan](https://i.imgur.com/zw9uxpn.png)
 
 ---
 
@@ -36,7 +36,7 @@ After checking port **80**, I found a website hosted by the server.
 
 **Website Preview:**
 
-![web_page](https://imgur.com/skp9gV8)
+![web_page](https://i.imgur.com/skp9gV8.png)
 
 I manually explored the available pages, but nothing particularly interesting stood out.
 
@@ -46,7 +46,7 @@ This note contained a **username**, which became useful later during authenticat
 
 **Source Code Finding:**
 
-![interest note](https://imgur.com/p5k9YQC)
+![interest note](https://i.imgur.com/p5k9YQC.png)
 
 ---
 
@@ -62,8 +62,8 @@ This revealed two interesting directories:
 
 **Directory Enumeration Result:**
 
-![gobuster_scan](https://imgur.com/YYq2s0l)
-![feroxbuster_scan](https://imgur.com/QZjtxxb)
+![gobuster_scan](https://i.imgur.com/YYq2s0l.png)
+![feroxbuster_scan](https://i.imgur.com/QZjtxxb.png)
 
 ### Interesting Findings
 
@@ -77,11 +77,11 @@ dict.lst
 
 The file contained a list of common passwords, which later proved useful during credential attacks.
 
-![uploads](https://imgur.com/jh5kRI0)
+![uploads](https://i.imgur.com/jh5kRI0.png)
 
 download it :
 
-![dict.lst](https://imgur.com/JFLnYEs)
+![dict.lst](https://i.imgur.com/JFLnYEs.png)
 
 ---
 
@@ -95,7 +95,7 @@ secretKey
 
 Upon inspection, it appeared to be an **SSH private key**.
 
-![secret](https://imgur.com/04iphl9)
+![secret](https://i.imgur.com/04iphl9.png)
 
 ---
 
@@ -116,7 +116,7 @@ My first thought was to attempt SSH authentication using the discovered credenti
 
 However, during login, SSH requested a **passphrase** for the private key.
 
-![ssh attempt](https://imgur.com/yJhZbUy)
+![ssh attempt](https://i.imgur.com/yJhZbUy.png)
 
 At that moment, the passphrase was unknown.
 
@@ -132,7 +132,7 @@ Then, I used the password list discovered earlier (`dict.lst`) to crack the pase
 
 The attack succeeded, revealing the correct passphrase.
 
-![Cracked](https://imgur.com/Jt3MUr1)
+![Cracked](https://i.imgur.com/Jt3MUr1.png)
 
 After obtaining it, I attempted SSH login again , and successfully gained access to the target machine.
 
@@ -142,7 +142,7 @@ After gaining access, I navigated the system and successfully retrieved the firs
 
 **User Flag:**
 
-![ssh login](https://imgur.com/i7LL8KX)
+![ssh login](https://i.imgur.com/i7LL8KX.png)
 
 ---
 
@@ -158,7 +158,7 @@ LXD is a Linux container management system that can allow privileged container a
 
 **LXD Group Membership:**
 
-![internal enum](https://imgur.com/ZPaFmTw)
+![internal enum](https://i.imgur.com/ZPaFmTw.png)
 
 After researching possible exploitation methods, I found a useful project:
 
@@ -170,11 +170,11 @@ https://github.com/saghul/lxd-alpine-builder
 
 download it on your local machin , then transfer it to the target machin .
 
-![alpine](https://imgur.com/LYFQcgE)
+![alpine](https://i.imgur.com/LYFQcgE.png)
 ### Exploitation Steps
 Source : https://gtfobins.org/gtfobins/lxd/#shell
 
-![Commands](https://imgur.com/Nwt3Yrn)
+![Commands](https://i.imgur.com/Nwt3Yrn.png)
 #### 1. Import the Alpine image
 
 ```bash
@@ -211,7 +211,7 @@ This ultimately led to retrieving:
 
 **Root Flag:**
 
-![Root Flage](https://imgur.com/cEKsV7f)
+![Root Flage](https://i.imgur.com/cEKsV7f.png)
 
 ---
 
