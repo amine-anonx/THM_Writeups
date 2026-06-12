@@ -38,6 +38,10 @@ This indicated that a web server was running on the target.
 
 ![nmap_scan](https://i.imgur.com/2UmtNUd.png) 
 
+**Feroxbuster Scan Result:**
+
+![img](https://i.imgur.com/PmTSoQI.png)
+
 ---
 
 ### Web Application Discovery
@@ -87,7 +91,6 @@ Directory enumeration revealed a WordPress login page:
 ```text id="mr2"
 /wp-login.php
 ```
-![img](https://i.imgur.com/PmTSoQI.png)
 
 The login page confirmed a WordPress installation running on the target.
 
